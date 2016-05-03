@@ -3,6 +3,8 @@ var board;
 var allCells = [];
 var linkCells = ['cell2501', 'cell2001', 'cell1401', 'cell0801', 'cell0401', 'cell0103', 'cell0107', 'cell0111', 'cell0115', 'cell0417', 'cell0817', 'cell1417', 'cell1917', 'cell2517', 'cell2205', 'cell1605', 'cell1005', 'cell0409', 'cell1013', 'cell1613', 'cell2213'];
 
+var arrNames = ['bill', 'bhuvana', 'carmen', 'chris', 'dale', 'dan-b', 'dan-m', 'dave', 'emily', 'harrison', 'ian', 'jae', 'jenn', 'josh', 'marc', 'prateek', 'prazwal', 'rany', 'sam-d', 'sam-h', 'tom'];
+
 var pad2 = function(number) {
   return (number < 10 ? '0' : '') + number;
 };
@@ -157,7 +159,8 @@ $(document).ready(function() {
   board.make(21, 5, 5, 13, '#right-walk');
   board.make(3, 17, 26, 1, '#bottom-walk');
   for (var i = 0; i < linkCells.length; i++) {
-    $('#' + linkCells[i]).addClass('linkCell');
+    var name = arrNames[i];
+    $('#' + linkCells[i]).addClass('linkCell').addClass(name);
   }
   personControls.new('Wolf');
   $('body').keydown(function(e) {
