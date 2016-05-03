@@ -199,6 +199,6 @@ $(document).ready(function() {
   $('.overlay__container').on('click', function() {
     $('.overlay__container').hide();
     $('.overlay__modal').hide();
-  })
+  });
 
 });
