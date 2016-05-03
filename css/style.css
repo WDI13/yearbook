@@ -98,6 +98,7 @@
 }
 .linkCell {
   background-color: red;
+  position: relative;
 }
 .person {
   max-width: 100%;
@@ -137,4 +138,26 @@
   text-align: center;
   height: 50%;
   border-radius: 10px;
+}
+
+.yb__dialog {
+  height: 50px;
+  width: 100px;
+  background: tomato;
+  position: absolute;
+  top: 60px;
+  z-index: 3;
+  text-align: center;
+  line-height: 50px;
+}
+
+.yb__info-box {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 220px;
+  height: 200px;
+  background: white;
+  z-index: 1;
+  border: 1px solid gray;
 }

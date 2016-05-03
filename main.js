@@ -158,9 +158,11 @@ $(document).ready(function() {
   board.make(21, 5, 5, 1, '#left-walk');
   board.make(21, 5, 5, 13, '#right-walk');
   board.make(3, 17, 26, 1, '#bottom-walk');
+
   for (var i = 0; i < linkCells.length; i++) {
     var name = arrNames[i];
-    $('#' + linkCells[i]).addClass('linkCell').addClass(name);
+    $div = $('<div>').addClass('yb__dialog');
+    $('#' + linkCells[i]).addClass('linkCell').addClass(name).attr('data-name', name);
   }
   personControls.new('Wolf');
   $('body').keydown(function(e) {
@@ -196,6 +198,16 @@ $(document).ready(function() {
     $('.overlay__container').hide();
     $('.overlay__modal').hide();
   });
+
+  $('.linkCell').on('mouseenter', function() {
+    var name = $(this).attr('data-name');
+    $('.yb__info-box').text(name);
+  });
+
+  $('.linkCell').on('mouseleave', function() {
+    $('.yb__info-box').text('');
+  });
+
 
 
 });
