@@ -218,6 +218,10 @@ var personControls = {
       if ('cell' + testCell === linkCells[j]) {
         var cssID = linkCells[j];
         var name = $('#' + cssID).attr('data-name');
+        var objDetails = data[name];
+        populateLinkCell(objDetails);
+        $('.overlay__container').show();
+        $('.overlay__modal').show();
         $('.yb__info-box').text(name);
       }
     }
@@ -307,6 +311,17 @@ var board = {
 
 };
 
+var populateLinkCell = function(obj) {
+  $('.overlay__modal--name').text(obj.name);
+  $('.overlay__modal--blah').text(obj.blah);
+  $('.overlay__modal--linkedIn').attr('href', obj.linkedIn);
+  $('.overlay__modal--portfolio').attr('href', obj.portfolio);
+  $('.overlay__modal--img').attr('src', obj.imgSrc);
+
+};
+
+/// DOCUMENT READY
+
 $(document).ready(function() {
   board.make(4, 17, 1, 1, '#top-walk');
   board.make(21, 5, 5, 1, '#left-walk');
@@ -341,15 +356,6 @@ $(document).ready(function() {
   setTimeout($('body').animate({
     scrollTop: $(document).height()
   }, 4000), 2000);
-
-  var populateLinkCell = function(obj) {
-    $('.overlay__modal--name').text(obj.name);
-    $('.overlay__modal--blah').text(obj.blah);
-    $('.overlay__modal--linkedIn').attr('href', obj.linkedIn);
-    $('.overlay__modal--portfolio').attr('href', obj.portfolio);
-    $('.overlay__modal--img').attr('src', obj.imgSrc);
-
-  };
 
 
   $('.linkCell').on('click', function() {
