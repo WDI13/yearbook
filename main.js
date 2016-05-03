@@ -188,3 +188,17 @@ $(function() {
 
     setTimeout($('body').animate({scrollTop:$(document).height()}, 4000), 2000);
 });
+
+
+$(document).ready(function() {
+  $('.linkCell').on('click', function() {
+    $('.overlay__container').show();
+    $('.overlay__modal').show();
+  });
+
+  $('.overlay__container').on('click', function() {
+    $('.overlay__container').hide();
+    $('.overlay__modal').hide();
+  })
+
+});
