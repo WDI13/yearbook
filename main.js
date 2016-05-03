@@ -346,21 +346,27 @@ $(document).ready(function() {
 
   // Keyboard events
   $('body').keydown(function(e) {
-    if (e.keyCode == 37) {
+    if (e.keyCode === 37) {
       e.preventDefault();
       personControls.left(person);
     }
-    if (e.keyCode == 39) {
+    if (e.keyCode === 39) {
       e.preventDefault();
       personControls.right(person);
     }
-    if (e.keyCode == 38) {
+    if (e.keyCode === 38) {
       e.preventDefault();
       personControls.forward(person);
     }
-    if (e.keyCode == 40) {
+    if (e.keyCode === 40) {
       e.preventDefault();
       personControls.backward(person);
+    }
+
+    // Escape key
+    if (e.keyCode === 27) {
+      $('.overlay__container').hide();
+      $('.overlay__modal').hide();    
     }
   });
 
