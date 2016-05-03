@@ -5,7 +5,147 @@ var data = {
     portfolio: '#',
     linkedIn: '#',
     blah: 'Something about butterflies'
-  }
+  },
+  'bhuvana': {
+    name: 'Bill',
+    imgSrc: 'img/magic.jpg',
+    portfolio: '#',
+    linkedIn: '#',
+    blah: 'Something about butterflies'
+  },
+  'carmen': {
+    name: 'Bill',
+    imgSrc: 'img/magic.jpg',
+    portfolio: '#',
+    linkedIn: '#',
+    blah: 'Something about butterflies'
+  },
+  'chris': {
+    name: 'Bill',
+    imgSrc: 'img/magic.jpg',
+    portfolio: '#',
+    linkedIn: '#',
+    blah: 'Something about butterflies'
+  },
+  'dale': {
+    name: 'Bill',
+    imgSrc: 'img/magic.jpg',
+    portfolio: '#',
+    linkedIn: '#',
+    blah: 'Something about butterflies'
+  },
+  'dan-b': {
+    name: 'Bill',
+    imgSrc: 'img/magic.jpg',
+    portfolio: '#',
+    linkedIn: '#',
+    blah: 'Something about butterflies'
+  },
+  'dan-m': {
+    name: 'Bill',
+    imgSrc: 'img/magic.jpg',
+    portfolio: '#',
+    linkedIn: '#',
+    blah: 'Something about butterflies'
+  },
+  'dave': {
+    name: 'Bill',
+    imgSrc: 'img/magic.jpg',
+    portfolio: '#',
+    linkedIn: '#',
+    blah: 'Something about butterflies'
+  },
+  'emily': {
+    name: 'Bill',
+    imgSrc: 'img/magic.jpg',
+    portfolio: '#',
+    linkedIn: '#',
+    blah: 'Something about butterflies'
+  },
+  'harrison': {
+    name: 'Bill',
+    imgSrc: 'img/magic.jpg',
+    portfolio: '#',
+    linkedIn: '#',
+    blah: 'Something about butterflies'
+  },
+  'ian': {
+    name: 'Bill',
+    imgSrc: 'img/magic.jpg',
+    portfolio: '#',
+    linkedIn: '#',
+    blah: 'Something about butterflies'
+  },
+  'jae': {
+    name: 'Bill',
+    imgSrc: 'img/magic.jpg',
+    portfolio: '#',
+    linkedIn: '#',
+    blah: 'Something about butterflies'
+  },
+  'jenn': {
+    name: 'Bill',
+    imgSrc: 'img/magic.jpg',
+    portfolio: '#',
+    linkedIn: '#',
+    blah: 'Something about butterflies'
+  },
+  'josh': {
+    name: 'Bill',
+    imgSrc: 'img/magic.jpg',
+    portfolio: '#',
+    linkedIn: '#',
+    blah: 'Something about butterflies'
+  },
+  'marc': {
+    name: 'Bill',
+    imgSrc: 'img/magic.jpg',
+    portfolio: '#',
+    linkedIn: '#',
+    blah: 'Something about butterflies'
+  },
+  'prateek': {
+    name: 'Bill',
+    imgSrc: 'img/magic.jpg',
+    portfolio: '#',
+    linkedIn: '#',
+    blah: 'Something about butterflies'
+  },
+  'prazwal': {
+    name: 'Bill',
+    imgSrc: 'img/magic.jpg',
+    portfolio: '#',
+    linkedIn: '#',
+    blah: 'Something about butterflies'
+  },
+  'rany': {
+    name: 'Bill',
+    imgSrc: 'img/magic.jpg',
+    portfolio: '#',
+    linkedIn: '#',
+    blah: 'Something about butterflies'
+  },
+  'sam-d': {
+    name: 'Bill',
+    imgSrc: 'img/magic.jpg',
+    portfolio: '#',
+    linkedIn: '#',
+    blah: 'Something about butterflies'
+  },
+  'sam-h': {
+    name: 'Bill',
+    imgSrc: 'img/magic.jpg',
+    portfolio: '#',
+    linkedIn: '#',
+    blah: 'Something about butterflies'
+  },
+  'tom': {
+    name: 'Bill',
+    imgSrc: 'img/magic.jpg',
+    portfolio: '#',
+    linkedIn: '#',
+    blah: 'Something about butterflies'
+  },
 
 };
 
