@@ -15,7 +15,7 @@
   background-color: grey
 }
 #left-tables {
-  height: 1300px;
+  height: 1350px;
   border: 1px solid black;
   background-color: lightblue;
 }
@@ -25,12 +25,12 @@
   background-color: lightblue;
 }
 #right-tables {
-  height: 1300px;
+  height: 1350px;
   border: 1px solid black;
   background-color: lightblue;
 }
 #top-walk {
-  height: 150px;
+  height: 200px;
   background-color: papayawhip;
 }
 #left-walk {
@@ -63,8 +63,48 @@
   height: 48px;
   width: 48px;
   display:inline-block;
-  /*border: 1px solid black;*/
+  border: 1px solid black;
   margin-bottom: -7px;
+  overflow: hidden;
+}
+
+.table {
+  border: 1px solid black;
+  display: inline-block;
+  height: 200px;
+  width: 100px;
+  text-align: center;
+  background-color: gainsboro;
+}
+
+.top {
+  transform: rotate(90deg);
+  margin: 0 50px;
+  position:relative;
+  top: 25px;
+}
+
+.left {
+  margin: 25px 0;
+  position:relative;
+  left: 75px;
+}
+
+.right {
+  margin: 25px 0;
+  position:relative;
+}
+
+.middle {
+  margin: 40px 10px;
+}
+.pivot {
+  transform: rotate(90deg);
+  margin: -25px 75px;
+}
+
+.linkCell {
+  background-color: red;
 }
 
 .person {
