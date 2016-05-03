@@ -394,7 +394,7 @@ $(document).ready(function() {
   $('.linkCell').on('click', function() {
     var name = $(this).attr('data-name');
     var objDetails = data[name];
-    console.log(objDetails);
+    // console.log(objDetails);
     populateLinkCell(objDetails);
     $('.overlay__container').show();
     $('.overlay__modal').show();
