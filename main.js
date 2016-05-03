@@ -1,147 +1,147 @@
 var data = {
   'bill': {
     name: 'Bill',
-    imgSrc: 'img/magic.jpg',
+    imgSrc: 'img/Bill.jpg',
     portfolio: '#',
     linkedIn: '#',
     blah: 'Something about butterflies'
   },
   'bhuvana': {
-    name: 'Bill',
-    imgSrc: 'img/magic.jpg',
+    name: 'Bhuvana ',
+    imgSrc: 'img/Bhuvana.jpg',
     portfolio: '#',
     linkedIn: '#',
     blah: 'Something about butterflies'
   },
   'carmen': {
-    name: 'Bill',
-    imgSrc: 'img/magic.jpg',
+    name: 'Carmen',
+    imgSrc: 'img/Carmen.jpg',
     portfolio: '#',
     linkedIn: '#',
     blah: 'Something about butterflies'
   },
   'chris': {
-    name: 'Bill',
-    imgSrc: 'img/magic.jpg',
+    name: 'Chris',
+    imgSrc: 'img/Chris.jpg',
     portfolio: '#',
     linkedIn: '#',
     blah: 'Something about butterflies'
   },
   'dale': {
-    name: 'Bill',
-    imgSrc: 'img/magic.jpg',
+    name: 'Dale',
+    imgSrc: 'img/Dale.jpg',
     portfolio: '#',
     linkedIn: '#',
     blah: 'Something about butterflies'
   },
   'dan-b': {
-    name: 'Bill',
-    imgSrc: 'img/magic.jpg',
+    name: 'Dan B',
+    imgSrc: 'img/DanielB.jpg',
     portfolio: '#',
     linkedIn: '#',
     blah: 'Something about butterflies'
   },
   'dan-m': {
-    name: 'Bill',
-    imgSrc: 'img/magic.jpg',
+    name: 'Dan M',
+    imgSrc: 'img/DanielM.jpg',
     portfolio: '#',
     linkedIn: '#',
     blah: 'Something about butterflies'
   },
   'dave': {
-    name: 'Bill',
-    imgSrc: 'img/magic.jpg',
+    name: 'Dave',
+    imgSrc: 'img/Dave.jpg',
     portfolio: '#',
     linkedIn: '#',
     blah: 'Something about butterflies'
   },
   'emily': {
-    name: 'Bill',
-    imgSrc: 'img/magic.jpg',
+    name: 'Emily',
+    imgSrc: 'img/Emily.jpg',
     portfolio: '#',
     linkedIn: '#',
     blah: 'Something about butterflies'
   },
   'harrison': {
-    name: 'Bill',
-    imgSrc: 'img/magic.jpg',
+    name: 'Harson',
+    imgSrc: 'img/Harrison.jpg',
     portfolio: '#',
     linkedIn: '#',
     blah: 'Something about butterflies'
   },
   'ian': {
-    name: 'Bill',
-    imgSrc: 'img/magic.jpg',
+    name: 'Ian',
+    imgSrc: 'img/Ian.jpg',
     portfolio: '#',
     linkedIn: '#',
     blah: 'Something about butterflies'
   },
   'jae': {
-    name: 'Bill',
-    imgSrc: 'img/magic.jpg',
+    name: 'Jae',
+    imgSrc: 'img/Jae.jpg',
     portfolio: '#',
     linkedIn: '#',
     blah: 'Something about butterflies'
   },
   'jenn': {
-    name: 'Bill',
-    imgSrc: 'img/magic.jpg',
+    name: 'Jenn',
+    imgSrc: 'img/Jenn.jpg',
     portfolio: '#',
     linkedIn: '#',
     blah: 'Something about butterflies'
   },
   'josh': {
-    name: 'Bill',
-    imgSrc: 'img/magic.jpg',
+    name: 'Josh',
+    imgSrc: 'img/Josh.jpg',
     portfolio: '#',
     linkedIn: '#',
     blah: 'Something about butterflies'
   },
   'marc': {
-    name: 'Bill',
-    imgSrc: 'img/magic.jpg',
+    name: 'Marc',
+    imgSrc: 'img/Marc.jpg',
     portfolio: '#',
     linkedIn: '#',
     blah: 'Something about butterflies'
   },
   'prateek': {
-    name: 'Bill',
-    imgSrc: 'img/magic.jpg',
+    name: 'Prateek',
+    imgSrc: 'img/Prateek.jpg',
     portfolio: '#',
     linkedIn: '#',
     blah: 'Something about butterflies'
   },
   'prazwal': {
-    name: 'Bill',
-    imgSrc: 'img/magic.jpg',
+    name: 'Prazwal',
+    imgSrc: 'img/Prazwal.jpg',
     portfolio: '#',
     linkedIn: '#',
     blah: 'Something about butterflies'
   },
   'rany': {
-    name: 'Bill',
-    imgSrc: 'img/magic.jpg',
+    name: 'Rany',
+    imgSrc: 'img/Rany.jpg',
     portfolio: '#',
     linkedIn: '#',
     blah: 'Something about butterflies'
   },
   'sam-d': {
-    name: 'Bill',
-    imgSrc: 'img/magic.jpg',
+    name: 'Samantha',
+    imgSrc: 'img/Samantha.jpg',
     portfolio: '#',
     linkedIn: '#',
     blah: 'Something about butterflies'
   },
   'sam-h': {
-    name: 'Bill',
-    imgSrc: 'img/magic.jpg',
+    name: 'Sam',
+    imgSrc: 'img/Sam.jpg',
     portfolio: '#',
     linkedIn: '#',
     blah: 'Something about butterflies'
   },
   'tom': {
-    name: 'Bill',
-    imgSrc: 'img/magic.jpg',
+    name: 'Tom',
+    imgSrc: 'img/Tom.jpg',
     portfolio: '#',
     linkedIn: '#',
     blah: 'Something about butterflies'
@@ -281,12 +281,7 @@ var personControls = {
       person.column += 1;
     }
     this.place(person);
-  },
-
-  reset: function() {
-    $('.person').remove();
   }
-
 
 };
 
@@ -302,10 +297,6 @@ var board = {
       }
       $(element).append('<br>');
     }
-
-  },
-
-  reset: function() {
 
   }
 
