@@ -64,7 +64,9 @@ var personControls = {
     var testCell = pad2(row).toString() + pad2(column).toString();
     for (var j = 0; j < linkCells.length; j++) {
       if ('cell' + testCell === linkCells[j]) {
-        console.log('linked');
+        var cssID = linkCells[j];
+        var name = $('#' + cssID).attr('data-name');
+        $('.yb__info-box').text(name);
       }
     }
     for (var i = 0; i < allCells.length; i++) {
