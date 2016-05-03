@@ -1,7 +1,6 @@
 .layout {
   /*display: inline-block;*/
 }
-
 #top-tables {
   height: 200px;
   border: 1px solid black;
@@ -73,7 +72,9 @@
   height: 200px;
   width: 100px;
   text-align: center;
-  background-color: gainsboro;
+  /*background-color: gainsboro;*/
+  background-image: url('../img/desktop.png');
+  background-size: contain;
 }
 .top {
   transform: rotate(90deg);
@@ -98,8 +99,19 @@
   margin: -25px 75px;
 }
 .linkCell {
-  background-color: red;
+  /*background-color: red;*/
+  background-image: url('../img/student.png');
+  background-size: contain;
   position: relative;
+}
+.row01.linkCell {
+  transform: rotate(180deg);
+}
+.column01.linkCell, .column13.linkCell {
+  transform: rotate(90deg);
+}
+.column05.linkCell, .column17.linkCell {
+  transform: rotate(270deg);
 }
 .person {
   max-width: 100%;
@@ -164,6 +176,18 @@
   text-align: center;
   text-transform: uppercase;
   line-height: 200px;
+}
+
+.yb__small-info-box {
+  display: none;
+  position: absolute;
+  width: 100px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 1;
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .overlay__modal--close {

@@ -410,6 +410,18 @@ $(document).ready(function() {
     $('.yb__info-box').text(name);
   });
 
+  $('.linkCell').on('mouseenter', function(e) {
+    var name = $(this).attr('data-name');
+    var x = e.pageX;
+    var y = e.pageY;
+    $('.yb__small-info-box').text(name);
+    $('.yb__small-info-box').css({left: x, top: y});
+    $('.yb__small-info-box').fadeIn();
+    setTimeout(function() {
+      $('.yb__small-info-box').fadeOut();
+    }, 2000);
+  });
+
   $('.linkCell').on('mouseleave', function() {
     $('.yb__info-box').text('');
   });
