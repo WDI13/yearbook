@@ -1,6 +1,7 @@
 var person;
 var board;
 var allCells = [];
+var linkCells = ['cell2501', 'cell2001', 'cell1401', 'cell0801', 'cell0401', 'cell0103', 'cell0107', 'cell0111', 'cell0115', 'cell0417', 'cell0817', 'cell1417', 'cell1917', 'cell2517', 'cell2205', 'cell1605', 'cell1005', 'cell0409', 'cell1013', 'cell1613', 'cell2213'];
 
 var pad2 = function(number) {
     return (number < 10 ? '0' : '') + number;
@@ -59,6 +60,11 @@ personControls = {
     },
     testMove: function(row, column) {
         var testCell = pad2(row).toString() + pad2(column).toString();
+        for (var j = 0; j < linkCells.length; j++) {
+            if ('cell' + testCell === linkCells[j]) {
+                console.log('linked');
+            }
+        }
         for (var i = 0; i < allCells.length; i++) {
             if (testCell === allCells[i]) {
                 return false;
@@ -145,8 +151,6 @@ var board = {
     }
 
 };
-
-var linkCells = ['cell2501', 'cell2001', 'cell1401', 'cell0801', 'cell0401', 'cell0103', 'cell0107', 'cell0111', 'cell0115', 'cell0417', 'cell0817', 'cell1417', 'cell1917', 'cell2517', 'cell2205', 'cell1605', 'cell1005', 'cell0409', 'cell1013', 'cell1613', 'cell2213'];
 
 $(function() {
     board.make(4,17,1,1,'#top-walk');
