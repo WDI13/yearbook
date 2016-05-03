@@ -1,5 +1,6 @@
 var person;
 var board;
+var allCells = [];
 
 var pad2 = function(number) {
     return (number < 10 ? '0' : '') + number;
@@ -57,24 +58,13 @@ personControls = {
         this.place(person);
     },
     testMove: function(row, column) {
-        if (row === 0) {
-            return true;
-        } else if (row === 29) {
-            return true;
-        } else if (column === 0) {
-            return true;
-        } else if (column === 18) {
-            return true;
-        } else if (row > 4 && row < 25 && column === 6) {
-            return true;
-        } else if (row > 4 && row < 25 && column === 12) {
-            return true;
-        } else if (column > 5 && column < 13 && row === 5) {
-            return true;
-        } else if (column > 5 && column < 13 && row === 25) {
-            return true;
+        var testCell = pad2(row).toString() + pad2(column).toString();
+        for (var i = 0; i < allCells.length; i++) {
+            if (testCell === allCells[i]) {
+                return false;
+            }
         }
-        return false;
+        return true;
     },
 
     forward: function(person) {
@@ -137,9 +127,9 @@ personControls = {
 var board = {
 
     make: function(rowNum, columnNum, rowStart, columnStart, element) {
-        // board = {row: row, column: column};
         for (var i = rowStart; i < (rowStart + rowNum); i++) {
             for (var j = columnStart; j < (columnStart + columnNum); j++) {
+                allCells.push(pad2(i).toString() + pad2(j).toString());
                   var $cell = $('<div class="cell"></div>');
                   $cell.addClass('row' + pad2(i)).addClass('column' + pad2(j)).attr('id','cell' + pad2(i) + pad2(j) );
                   $(element).append($cell);
