@@ -348,25 +348,44 @@ $(document).ready(function() {
   $('body').keydown(function(e) {
     if (e.keyCode === 37) {
       e.preventDefault();
+      if ($('.overlay__container').css('display') !== 'none') {
+        $('.overlay__container').hide();
+        $('.overlay__modal').hide();
+      }
       personControls.left(person);
     }
+
     if (e.keyCode === 39) {
       e.preventDefault();
+      if ($('.overlay__container').css('display') !== 'none') {
+        $('.overlay__container').hide();
+        $('.overlay__modal').hide();
+      }
       personControls.right(person);
     }
+
     if (e.keyCode === 38) {
       e.preventDefault();
+      if ($('.overlay__container').css('display') !== 'none') {
+        $('.overlay__container').hide();
+        $('.overlay__modal').hide();
+      }
       personControls.forward(person);
     }
+
     if (e.keyCode === 40) {
-      e.preventDefault();
       personControls.backward(person);
-    }
+      if ($('.overlay__container').css('display') !== 'none') {
+        $('.overlay__container').hide();
+        $('.overlay__modal').hide();
+      }
+      e.preventDefault();
+   }
 
     // Escape key
     if (e.keyCode === 27) {
       $('.overlay__container').hide();
-      $('.overlay__modal').hide();    
+      $('.overlay__modal').hide();
     }
   });
 
