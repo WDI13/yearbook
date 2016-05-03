@@ -60,7 +60,7 @@
 .cell {
   height: 48px;
   width: 48px;
-  display:inline-block;
+  display: inline-block;
   /*border: 1px solid black;*/
   border-radius: 50%;
   margin-bottom: -7px;
@@ -123,6 +123,7 @@
   z-index: 2;
   background: #333333;
   opacity: 0.8;
+  cursor: pointer;
 }
 .overlay__modal {
   display: none;
@@ -139,7 +140,6 @@
   height: 50%;
   border-radius: 10px;
 }
-
 .yb__dialog {
   height: 50px;
   width: 100px;
@@ -150,7 +150,6 @@
   text-align: center;
   line-height: 50px;
 }
-
 .yb__info-box {
   position: fixed;
   top: 0;
@@ -160,4 +159,16 @@
   background: white;
   z-index: 1;
   border: 1px solid gray;
+  font-size: 2em;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 200px;
+}
+
+.overlay__modal--close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  text-align: right;
+  cursor: pointer;
 }

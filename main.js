@@ -210,6 +210,11 @@ $(document).ready(function() {
     $('.yb__info-box').text('');
   });
 
+  $('.overlay__modal--close').on('click', function() {
+    $('.overlay__container').hide();
+    $('.overlay__modal').hide();
+  });
+
 
 
 });
