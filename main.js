@@ -1,3 +1,15 @@
+var data = {
+  'bill': {
+    name: 'Bill',
+    imgSrc: 'img/magic.jpg',
+    portfolio: '#',
+    linkedIn: '#',
+    blah: 'Something about butterflies'
+  }
+
+};
+
+
 var person;
 var board;
 var allCells = [];
@@ -190,8 +202,21 @@ $(document).ready(function() {
     scrollTop: $(document).height()
   }, 4000), 2000);
 
+  var populateLinkCell = function(obj) {
+    $('.overlay__modal--name').text(obj.name);
+    $('.overlay__modal--blah').text(obj.blah);
+    $('.overlay__modal--linkedIn').attr('href', obj.linkedIn);
+    $('.overlay__modal--portfolio').attr('href', obj.portfolio);
+    $('.overlay__modal--img').attr('src', obj.imgSrc);
+
+  };
+
 
   $('.linkCell').on('click', function() {
+    var name = $(this).attr('data-name');
+    var objDetails = data[name];
+    console.log(objDetails);
+    populateLinkCell(objDetails);
     $('.overlay__container').show();
     $('.overlay__modal').show();
   });
