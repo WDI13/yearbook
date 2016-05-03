@@ -161,6 +161,7 @@ var pad2 = function(number) {
   return (number < 10 ? '0' : '') + number;
 };
 
+// Object to handle Wolf
 var personControls = {
 
   new: function(name) {
@@ -285,6 +286,7 @@ var personControls = {
 
 };
 
+// Function to create boards
 var board = {
 
   make: function(rowNum, columnNum, rowStart, columnStart, element) {
@@ -302,6 +304,7 @@ var board = {
 
 };
 
+// Function to populate modal with student details
 var populateLinkCell = function(obj) {
   $('.overlay__modal--name').text(obj.name);
   $('.overlay__modal--blah').text(obj.blah);
@@ -314,41 +317,76 @@ var populateLinkCell = function(obj) {
 /// DOCUMENT READY
 
 $(document).ready(function() {
+
+  // create board
   board.make(4, 17, 1, 1, '#top-walk');
   board.make(21, 5, 5, 1, '#left-walk');
   board.make(21, 5, 5, 13, '#right-walk');
   board.make(3, 17, 26, 1, '#bottom-walk');
 
+  // add stuff to red linkCells
   for (var i = 0; i < linkCells.length; i++) {
     var name = arrNames[i];
     $div = $('<div>').addClass('yb__dialog');
     $('#' + linkCells[i]).addClass('linkCell').addClass(name).attr('data-name', name);
   }
+
+  // Create Wolf
   personControls.new('Wolf');
+
+
+  // Keyboard events
   $('body').keydown(function(e) {
-    if (e.keyCode == 37) {
+    if (e.keyCode === 37) {
       e.preventDefault();
+      if ($('.overlay__container').css('display') !== 'none') {
+        $('.overlay__container').hide();
+        $('.overlay__modal').hide();
+      }
       personControls.left(person);
     }
-    if (e.keyCode == 39) {
+
+    if (e.keyCode === 39) {
       e.preventDefault();
+      if ($('.overlay__container').css('display') !== 'none') {
+        $('.overlay__container').hide();
+        $('.overlay__modal').hide();
+      }
       personControls.right(person);
     }
-    if (e.keyCode == 38) {
+
+    if (e.keyCode === 38) {
       e.preventDefault();
+      if ($('.overlay__container').css('display') !== 'none') {
+        $('.overlay__container').hide();
+        $('.overlay__modal').hide();
+      }
       personControls.forward(person);
     }
-    if (e.keyCode == 40) {
-      e.preventDefault();
+
+    if (e.keyCode === 40) {
       personControls.backward(person);
+      if ($('.overlay__container').css('display') !== 'none') {
+        $('.overlay__container').hide();
+        $('.overlay__modal').hide();
+      }
+      e.preventDefault();
+   }
+
+    // Escape key
+    if (e.keyCode === 27) {
+      $('.overlay__container').hide();
+      $('.overlay__modal').hide();
     }
   });
 
+  // Initial animation
   setTimeout($('body').animate({
     scrollTop: $(document).height()
   }, 4000), 2000);
 
 
+  // Event handlers for linkCells
   $('.linkCell').on('click', function() {
     var name = $(this).attr('data-name');
     var objDetails = data[name];
