@@ -4,7 +4,7 @@ var data = {
     imgSrc: 'img/Bill.jpg',
     portfolio: '#',
     linkedIn: '#',
-    blah: 'Something about butterflies'
+    blah: 'I am a Nodist'
   },
   'bhuvana': {
     name: 'Bhuvana ',
