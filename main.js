@@ -149,6 +149,18 @@ var data = {
 
 };
 
+function preloadimages(arr){ // Should preload images so we get the image of the person
+    var newimages=[]         // when their div pops up.
+    for (var i=0; i<arr.length; i++){
+        newimages[i]=new Image()
+        newimages[i].src=arr[i]
+    }
+}
+data.names = Object.getOwnPropertyNames(data); // this could be arrNames, but didn't see it till just then.
+data.imgSrcs = data.names.map( function (person) {
+  return person.imgSrc;
+});
+preloadimages(data.imgSrcs);
 
 var person;
 var board;
