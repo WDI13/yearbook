@@ -322,12 +322,11 @@ var board = {
 
 // Function to populate modal with student details
 var populateLinkCell = function(obj) {
-  $('.overlay__modal--name').text(obj.name);
-  $('.overlay__modal--blah').text(obj.blah);
+  $('.overlay__modal--img').attr('src', obj.imgSrc);
   $('.overlay__modal--linkedIn').attr('href', obj.linkedIn);
   $('.overlay__modal--portfolio').attr('href', obj.portfolio);
-  $('.overlay__modal--img').attr('src', obj.imgSrc);
-
+  $('.overlay__modal--name').text(obj.name);
+  $('.overlay__modal--blah').text(obj.blah);
 };
 
 /// DOCUMENT READY
