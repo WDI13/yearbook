@@ -327,7 +327,7 @@ $(document).ready(function() {
   board.make(21, 5, 5, 1, '#left-walk');
   board.make(21, 5, 5, 13, '#right-walk');
   board.make(3, 17, 26, 1, '#bottom-walk');
-  eggRef = '2917';
+  eggRef = '2901';
   // add stuff to red linkCells
   for (var i = 0; i < linkCells.length; i++) {
     var name = arrNames[i];
