@@ -174,7 +174,7 @@ var pad2 = function(number) {
   return (number < 10 ? '0' : '') + number;
 };
 
-// Object to handle Wolf
+// Object to handle Agent Wolf
 var personControls = {
 
   new: function(name) {
@@ -345,8 +345,8 @@ $(document).ready(function() {
     $('#' + linkCells[i]).addClass('linkCell').addClass(name).attr('data-name', name);
   }
 
-  // Create Wolf
-  personControls.new('Wolf');
+  // Create Agent Wolf
+  personControls.new('Agent Wolf');
 
 
   // Keyboard events
