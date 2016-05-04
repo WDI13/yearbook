@@ -150,10 +150,10 @@ var data = {
 };
 
 function preloadimages(arr){ // Should preload images so we get the image of the person
-    var newimages=[]         // when their div pops up.
+    var newimages=[];         // when their div pops up.
     for (var i=0; i<arr.length; i++){
-        newimages[i]=new Image()
-        newimages[i].src=arr[i]
+        newimages[i]=new Image();
+        newimages[i].src=arr[i];
     }
 }
 data.names = Object.getOwnPropertyNames(data); // this could be arrNames, but didn't see it till just then.
@@ -320,18 +320,17 @@ var board = {
 
 };
 
-// Function to populate modal with student details
+
 var populateLinkCell = function(obj) {
-  $('.overlay__modal--img').attr('src', obj.imgSrc);
-  $('.overlay__modal--linkedIn').attr('href', obj.linkedIn);
-  $('.overlay__modal--portfolio').attr('href', obj.portfolio);
-  $('.overlay__modal--name').text(obj.name);
-  $('.overlay__modal--blah').text(obj.blah);
+  $('.overlay__modal').html( linkCellTemplate(obj) );
 };
+
+var linkCellTemplate;
 
 /// DOCUMENT READY
 
 $(document).ready(function() {
+  linkCellTemplate = _.template($('.overlay__template').text());
 
   // create board
   board.make(4, 17, 1, 1, '#top-walk');
@@ -405,7 +404,6 @@ $(document).ready(function() {
   $('.linkCell').on('click', function() {
     var name = $(this).attr('data-name');
     var objDetails = data[name];
-    // console.log(objDetails);
     populateLinkCell(objDetails);
     $('.overlay__container').show();
     $('.overlay__modal').show();

@@ -7,6 +7,7 @@
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js'></script>
+  <script src="lodash.js"></script>
   <script src='main.js'></script>
 
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css'>
@@ -14,20 +15,24 @@
 
 </head>
 
+<script class="overlay__template" type="text/template">
+  <div class="overlay__modal--close">X</div>
+  <div class="overlay__modal--name"><%= name%></div>
+  <img class="overlay__modal--img" src="<%= imgSrc %>"/>
+  <div class="overlay__modal--blah"><%= blah %></div>
+  <div>
+    <a class="overlay__modal--portfolio">My Portfolio</>
+  </div>
+  <div>
+    <a class="overlay__modal--linkedIn">My LinkedIn</>
+  </div>
+</script>
+
 <body>
+
   <div id="#overlay" class="overlay__container"></div>
 
   <div class="overlay__modal">
-    <div class="overlay__modal--close">X</div>
-    <div class="overlay__modal--name"></div>
-    <img class="overlay__modal--img"/>
-    <div class="overlay__modal--blah"></div>
-    <div>
-      <a class="overlay__modal--portfolio">My Portfolio</>
-    </div>
-    <div>
-      <a class="overlay__modal--linkedIn">My LinkedIn</>
-    </div>
   </div>
 
   <div class="yb__info-box"></div>
@@ -76,12 +81,5 @@
 
   <div id="footer" class='col-md-12 layout'></div>
 
-
-
-
-
-
-
 </body>
-
 </html>
