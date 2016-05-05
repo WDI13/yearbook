@@ -233,13 +233,8 @@ var personControls = {
     }
     for (var j = 0; j < linkCells.length; j++) {
       if ('cell' + testCell === linkCells[j]) {
-        var cssID = linkCells[j];
-        var name = $('#' + cssID).attr('data-name');
-        var objDetails = data[name];
-        populateLinkCell(objDetails);
-        $('.overlay__container').show();
-        $('.overlay__modal').show();
-        $('.yb__info-box').text(name);
+        this.openModal(linkCells[j]);
+        return false;
       }
     }
     for (var i = 0; i < allCells.length; i++) {
@@ -248,6 +243,16 @@ var personControls = {
       }
     }
     return true;
+  },
+  openModal: function(cellId) {
+    // var cssID = linkCells[j];
+    var name = $('#' + cellId).children().attr('data-name');
+    var objDetails = data[name];
+    console.log(objDetails);
+    populateLinkCell(objDetails);
+    $('.overlay__container').show();
+    $('.overlay__modal').show();
+    $('.yb__info-box').text(name);
   },
 
   forward: function(person) {
@@ -342,7 +347,11 @@ $(document).ready(function() {
   for (var i = 0; i < linkCells.length; i++) {
     var name = arrNames[i];
     $div = $('<div>').addClass('yb__dialog');
-    $('#' + linkCells[i]).addClass('linkCell').addClass(name).attr('data-name', name);
+    var $linkCell = $('<div></div>');
+    $linkCell.addClass('row' + linkCells[i].slice(4,6));
+    $linkCell.addClass('column' + linkCells[i].slice(6,8));
+    $linkCell.addClass('cell linkCell ').addClass(name).attr('data-name', name);
+    $('#' + linkCells[i]).append($linkCell);
   }
 
   // Create Wolf
