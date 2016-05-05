@@ -166,7 +166,7 @@
   position: fixed;
   top: 0;
   right: 0;
-  width: 220px;
+  /*width: 220px;*/
   height: 200px;
   background: white;
   z-index: 1;
@@ -175,6 +175,21 @@
   text-align: center;
   text-transform: uppercase;
   line-height: 200px;
+}
+.yb__wdi13-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  /*width: 220px;*/
+  height: 200px;
+  background: white;
+  z-index: 1;
+  border: 1px solid gray;
+  font-size: 2em;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 200px;
+  font-weight: 900;
 }
 
 .yb__small-info-box {
