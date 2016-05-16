@@ -99,7 +99,6 @@
   margin: -25px 75px;
 }
 .linkCell {
-  /*background-color: red;*/
   background-image: url('../img/student.png');
   background-size: contain;
   position: relative;
@@ -127,6 +126,10 @@
 }
 .west {
   transform: rotate(270deg);
+}
+.landMine {
+  background-image: url(../img/explosion.GIF);
+  background-size: cover;
 }
 .overlay__container {
   display: none;

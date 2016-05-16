@@ -167,6 +167,7 @@ var board;
 var allCells = [];
 var linkCells = ['cell2501', 'cell2001', 'cell1401', 'cell0801', 'cell0401', 'cell0103', 'cell0107', 'cell0111', 'cell0115', 'cell0417', 'cell0817', 'cell1417', 'cell1917', 'cell2517', 'cell2205', 'cell1605', 'cell1005', 'cell0409', 'cell1013', 'cell1613', 'cell2213'];
 var eggRef;
+var landMind;
 
 var arrNames = ['bill', 'bhuvana', 'carmen', 'chris', 'dale', 'dan-b', 'dan-m', 'dave', 'emily', 'harrison', 'ian', 'jae', 'jenn', 'josh', 'marc', 'prateek', 'prazwal', 'rany', 'sam-d', 'sam-h', 'tom'];
 
@@ -231,15 +232,16 @@ var personControls = {
     if (testCell === eggRef) {
       window.location.replace("egg.html");
     }
+    for (var x = 0; x < landMine.length; x++) {
+      if (testCell === landMine[x]) {
+        this.landMine('#cell' + testCell);
+        return true;
+      }
+    }
     for (var j = 0; j < linkCells.length; j++) {
       if ('cell' + testCell === linkCells[j]) {
-        var cssID = linkCells[j];
-        var name = $('#' + cssID).attr('data-name');
-        var objDetails = data[name];
-        populateLinkCell(objDetails);
-        $('.overlay__container').show();
-        $('.overlay__modal').show();
-        $('.yb__info-box').text(name);
+        this.openModal(linkCells[j]);
+        return false;
       }
     }
     for (var i = 0; i < allCells.length; i++) {
@@ -248,6 +250,25 @@ var personControls = {
       }
     }
     return true;
+  },
+  openModal: function(cellId) {
+    // var cssID = linkCells[j];
+    var name = $('#' + cellId).children().attr('data-name');
+    var objDetails = data[name];
+    populateLinkCell(objDetails);
+    $('.overlay__container').show();
+    $('.overlay__modal').show();
+    $('.yb__info-box').text(name);
+  },
+
+  landMine: function(cellId) {
+    $('.person').remove();
+    $(cellId).addClass('landMine');
+    setTimeout(function(){
+      personControls.new('Wolf');
+      $(cellId).removeClass('landMine');
+      window.scrollTo(0,document.body.scrollHeight);
+    }, 2000);
   },
 
   forward: function(person) {
@@ -316,6 +337,10 @@ var board = {
       $(element).append('<br>');
     }
 
+  },
+  addLandMine: function(array) {
+
+
   }
 
 };
@@ -338,11 +363,16 @@ $(document).ready(function() {
   board.make(21, 5, 5, 13, '#right-walk');
   board.make(3, 17, 26, 1, '#bottom-walk');
   eggRef = '2901';
+  landMine = ['2804', '2817', '0601', '0117', '2113'];
   // add stuff to red linkCells
   for (var i = 0; i < linkCells.length; i++) {
     var name = arrNames[i];
     $div = $('<div>').addClass('yb__dialog');
-    $('#' + linkCells[i]).addClass('linkCell').addClass(name).attr('data-name', name);
+    var $linkCell = $('<div></div>');
+    $linkCell.addClass('row' + linkCells[i].slice(4,6));
+    $linkCell.addClass('column' + linkCells[i].slice(6,8));
+    $linkCell.addClass('cell linkCell ').addClass(name).attr('data-name', name);
+    $('#' + linkCells[i]).append($linkCell);
   }
 
   // Create Agent Wolf
