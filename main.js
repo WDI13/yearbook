@@ -44,9 +44,9 @@ var data = {
   'dan-m': {
     name: 'Dan M',
     imgSrc: 'img/DanielM.jpg',
-    portfolio: '#',
-    linkedIn: '#',
-    blah: 'Something about butterflies'
+    portfolio: 'http://danielmoi.com',
+    linkedIn: 'http://linkedin.com/in/danielmoi',
+    blah: 'Something about butterflies, code, design, and the oxford comma'
   },
   'dave': {
     name: 'Dave',
