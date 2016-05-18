@@ -113,7 +113,6 @@ body {
   margin: -25px 75px;
 }
 .linkCell {
-  /*background-color: red;*/
   background-image: url('../img/student.png');
   background-size: contain;
   position: relative;
@@ -145,6 +144,10 @@ body {
 }
 .west {
   transform: rotate(270deg);
+}
+.landMine {
+  background-image: url(../img/explosion.GIF);
+  background-size: cover;
 }
 .overlay__container {
   display: none;
@@ -185,7 +188,7 @@ body {
   position: fixed;
   top: 0;
   right: 0;
-  width: 220px;
+  /*width: 220px;*/
   height: 200px;
   background: white;
   z-index: 1;
@@ -194,6 +197,21 @@ body {
   text-align: center;
   text-transform: uppercase;
   line-height: 200px;
+}
+.yb__wdi13-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  /*width: 220px;*/
+  height: 200px;
+  background: white;
+  z-index: 1;
+  border: 1px solid gray;
+  font-size: 2em;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 200px;
+  font-weight: 900;
 }
 
 .yb__small-info-box {
@@ -218,21 +236,4 @@ body {
 
 .overlay__modal--name {
   font-size: 2em;
-}
-
-video#bgvid {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    background: url(polina.jpg) no-repeat;
-    background-size: cover;
 }

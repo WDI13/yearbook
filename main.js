@@ -4,7 +4,7 @@ var data = {
     imgSrc: 'img/Bill.jpg',
     portfolio: '#',
     linkedIn: '#',
-    blah: 'Something about butterflies'
+    blah: 'I am a Nodist'
   },
   'bhuvana': {
     name: 'Bhuvana ',
@@ -44,9 +44,9 @@ var data = {
   'dan-m': {
     name: 'Dan M',
     imgSrc: 'img/DanielM.jpg',
-    portfolio: '#',
-    linkedIn: '#',
-    blah: 'Something about butterflies'
+    portfolio: 'http://danielmoi.com',
+    linkedIn: 'http://linkedin.com/in/danielmoi',
+    blah: 'Something about butterflies, code, design, and the oxford comma'
   },
   'dave': {
     name: 'Dave',
@@ -149,12 +149,25 @@ var data = {
 
 };
 
+function preloadimages(arr){ // Should preload images so we get the image of the person
+    var newimages=[];         // when their div pops up.
+    for (var i=0; i<arr.length; i++){
+        newimages[i]=new Image();
+        newimages[i].src=arr[i];
+    }
+}
+data.names = Object.getOwnPropertyNames(data); // this could be arrNames, but didn't see it till just then.
+data.imgSrcs = data.names.map( function (person) {
+  return person.imgSrc;
+});
+preloadimages(data.imgSrcs);
 
 var person;
 var board;
 var allCells = [];
 var linkCells = ['cell2501', 'cell2001', 'cell1401', 'cell0801', 'cell0401', 'cell0103', 'cell0107', 'cell0111', 'cell0115', 'cell0417', 'cell0817', 'cell1417', 'cell1917', 'cell2517', 'cell2205', 'cell1605', 'cell1005', 'cell0409', 'cell1013', 'cell1613', 'cell2213'];
 var eggRef;
+var landMind;
 
 var arrNames = ['bill', 'bhuvana', 'carmen', 'chris', 'dale', 'dan-b', 'dan-m', 'dave', 'emily', 'harrison', 'ian', 'jae', 'jenn', 'josh', 'marc', 'prateek', 'prazwal', 'rany', 'sam-d', 'sam-h', 'tom'];
 
@@ -162,7 +175,7 @@ var pad2 = function(number) {
   return (number < 10 ? '0' : '') + number;
 };
 
-// Object to handle Wolf
+// Object to handle Agent Wolf
 var personControls = {
 
   new: function(name) {
@@ -219,15 +232,16 @@ var personControls = {
     if (testCell === eggRef) {
       window.location.replace("egg.html");
     }
+    for (var x = 0; x < landMine.length; x++) {
+      if (testCell === landMine[x]) {
+        this.landMine('#cell' + testCell);
+        return true;
+      }
+    }
     for (var j = 0; j < linkCells.length; j++) {
       if ('cell' + testCell === linkCells[j]) {
-        var cssID = linkCells[j];
-        var name = $('#' + cssID).attr('data-name');
-        var objDetails = data[name];
-        populateLinkCell(objDetails);
-        $('.overlay__container').fadeIn();
-        $('.overlay__modal').fadeIn();
-        // $('.yb__info-box').text(name);
+        this.openModal(linkCells[j]);
+        return false;
       }
     }
     for (var i = 0; i < allCells.length; i++) {
@@ -236,6 +250,25 @@ var personControls = {
       }
     }
     return true;
+  },
+  openModal: function(cellId) {
+    // var cssID = linkCells[j];
+    var name = $('#' + cellId).children().attr('data-name');
+    var objDetails = data[name];
+    populateLinkCell(objDetails);
+    $('.overlay__container').show();
+    $('.overlay__modal').show();
+    $('.yb__info-box').text(name);
+  },
+
+  landMine: function(cellId) {
+    $('.person').remove();
+    $(cellId).addClass('landMine');
+    setTimeout(function(){
+      personControls.new('Wolf');
+      $(cellId).removeClass('landMine');
+      window.scrollTo(0,document.body.scrollHeight);
+    }, 2000);
   },
 
   forward: function(person) {
@@ -304,39 +337,46 @@ var board = {
       $(element).append('<br>');
     }
 
+  },
+  addLandMine: function(array) {
+
+
   }
 
 };
 
-// Function to populate modal with student details
-var populateLinkCell = function(obj) {
-  $('.overlay__modal--name').text(obj.name);
-  $('.overlay__modal--blah').text(obj.blah);
-  $('.overlay__modal--linkedIn').attr('href', obj.linkedIn);
-  $('.overlay__modal--portfolio').attr('href', obj.portfolio);
-  $('.overlay__modal--img').attr('src', obj.imgSrc);
 
+var populateLinkCell = function(obj) {
+  $('.overlay__modal').html( linkCellTemplate(obj) );
 };
+
+var linkCellTemplate;
 
 /// DOCUMENT READY
 
 $(document).ready(function() {
+  linkCellTemplate = _.template($('.overlay__template').text());
 
   // create board
   board.make(4, 17, 1, 1, '#top-walk');
   board.make(21, 5, 5, 1, '#left-walk');
   board.make(21, 5, 5, 13, '#right-walk');
   board.make(3, 17, 26, 1, '#bottom-walk');
-  eggRef = '2917';
+  eggRef = '2901';
+  landMine = ['2804', '2817', '0601', '0117', '2113'];
   // add stuff to red linkCells
   for (var i = 0; i < linkCells.length; i++) {
     var name = arrNames[i];
     $div = $('<div>').addClass('yb__dialog');
-    $('#' + linkCells[i]).addClass('linkCell').addClass(name).attr('data-name', name);
+    var $linkCell = $('<div></div>');
+    $linkCell.addClass('row' + linkCells[i].slice(4,6));
+    $linkCell.addClass('column' + linkCells[i].slice(6,8));
+    $linkCell.addClass('cell linkCell ').addClass(name).attr('data-name', name);
+    $('#' + linkCells[i]).append($linkCell);
   }
 
-  // Create Wolf
-  personControls.new('Wolf');
+  // Create Agent Wolf
+  personControls.new('Agent Wolf');
 
 
   // Keyboard events
@@ -394,7 +434,6 @@ $(document).ready(function() {
   $('.linkCell').on('click', function() {
     var name = $(this).attr('data-name');
     var objDetails = data[name];
-    // console.log(objDetails);
     populateLinkCell(objDetails);
     $('.overlay__container').show();
     $('.overlay__modal').show();
