@@ -3,52 +3,52 @@
 }
 #top-tables {
   height: 200px;
-  border: 1px solid black;
-  background-color: lightblue;
+  /*border: 1px solid black;*/
+  /*background-color: lightblue;*/
 }
 #top-left-space {
   height: 200px;
-  background-color: grey
+  /*background-color: grey*/
 }
 #top-right-space {
   height: 200px;
-  background-color: grey
+  /*background-color: grey*/
 }
 #left-tables {
   height: 1350px;
-  border: 1px solid black;
-  background-color: lightblue;
+  /*border: 1px solid black;*/
+  /*background-color: lightblue;*/
 }
 #middle-tables {
   height: 1000px;
-  border: 1px solid black;
-  background-color: lightblue;
+  /*border: 1px solid black;*/
+  /*background-color: lightblue;*/
 }
 #right-tables {
   height: 1350px;
-  border: 1px solid black;
-  background-color: lightblue;
+  /*border: 1px solid black;*/
+  /*background-color: lightblue;*/
 }
 #top-walk {
   height: 200px;
-  background-color: papayawhip;
+  /*background-color: papayawhip;*/
 }
 #left-walk {
   height: 1000px;
-  background-color: papayawhip;
+  /*background-color: papayawhip;*/
 }
 #right-walk {
   height: 1000px;
-  background-color: papayawhip;
+  /*background-color: papayawhip;*/
 }
 #bottom-walk {
   height: 150px;
-  background-color: papayawhip;
+  /*background-color: papayawhip;*/
 }
 #footer {
   height: 150px;
-  border: 1px solid black;
-  background-color: grey
+  /*border: 1px solid black;
+  background-color: grey*/
 }
 #middle-container {
   padding: 0;
@@ -67,12 +67,11 @@
   overflow: hidden;
 }
 .table {
-  border: 1px solid black;
+  box-shadow: 2px 0px 14px black;
   display: inline-block;
   height: 200px;
   width: 100px;
   text-align: center;
-  /*background-color: gainsboro;*/
   background-image: url('../img/desktop.png');
   background-size: contain;
 }
